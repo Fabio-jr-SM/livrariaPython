@@ -34,6 +34,13 @@ def removerLivros():
     livroRemove = input("Digite nome do livro que deseja remover: ")
     del livraria.titulos[livroRemove]
 
+def atualizarLivro():
+    os.system("cls")
+    printLivros()
+    nome_alterar = input("Digite nome do livro que deseja alterar: ")
+    key_alterar = input("Digite o que deseja alterar (autor,ano, Gênero,Preço,N. Páginas): ")
+    alterar = input("Digite a alteração: ")
+    livraria.titulos[nome_alterar] = {key_alterar:alterar}
 
 while True:
     printLivros() 
@@ -42,6 +49,8 @@ while True:
         addLivros()
     elif(op==2):
         removerLivros()
+    elif(op==3):
+        atualizarLivro()
     elif(op==4):
         break
 
